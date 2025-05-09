@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>faisal abdul majid</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #272b2f;
+      }
+
+      .custom-dropdown {
+        background-color: #212529; /* Warna latar */
+        color: white; /* Warna teks */
+      }
+
+      .custom-dropdown .dropdown-item {
+        color: white; /* Warna teks item */
+      }
+
+      .custom-dropdown .dropdown-item:hover {
+        background-color: #212529; /* Warna saat hover */
+        color: white; /* Warna teks saat hover */
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: #343a40; /* Warna latar saat hover */
+        color: #ffffff; /* Warna teks saat hover */
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh;
+        background: url("assets/img/hero.jpg") no-repeat center center;
+        background-size: cover;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+
+      /* Change color of navbar-toggler button */
+      .navbar-toggler {
+        color: white; /* Change button color to white */
+        border-color: white; /* Change button border color to white */
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+
+      /* Media query for responsive navbar */
+
+      /* laptop */
+      @media (max-width: 992px) {
+        html {
+          font-size: 80%; /* Adjusted font size */
+        }
+
+        .navbar {
+          background-color: #343a40; /* Change background color */
+        }
+        .navbar-toggler {
+          color: white; /* Change button color to white */
+        }
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+      }
+
+      /* tablet */
+      @media (max-width: 768px) {
+        html {
+          font-size: 70%; /* Adjusted font size */
+        }
+
+        .mynavbar .nav-link {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .about .row {
+          flex-direction: column; /* Stack the columns vertically */
+          align-items: center; /* Center align the items */
+        }
+
+        .about .col-6 {
+          width: 100%; /* Make the columns full width */
+          text-align: center; /* Center align the text */
+        }
+
+        .about .col-6 p {
+          padding-left: 5rem; /* Add padding to the text */
+          padding-right: 5rem; /* Add padding to the text */
+        }
+
+        .about img {
+          margin-bottom: 20px; /* Add some space below the image */
+        }
+      }
+
+      /* phone */
+      @media (max-width: 576px) {
+        html {
+          font-size: 50%; /* Adjusted font size */
+        }
+        about.row .col .h5 {
+          padding: 0 100px; /* Adjust font size as needed */
+        }
+
+        /* Add padding to sections */
+        section {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      /* Footer font size adjustments */
+      footer .contact h3,
+      footer .contact h6,
+      footer .contact p,
+      footer .contact a {
+        font-size: 1.2rem; /* Adjust font size as needed */
+      }
+
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .portfolio-item img {
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover img {
+        filter: brightness(50%);
+      }
+
+      .portfolio-item .view-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .portfolio-item:hover .view-text {
+        opacity: 1;
+      }
+
+      .text-justify {
+        text-align: justify;
+      }
+
+      /* phone */
+      @media (max-width: 576px) {
+        html {
+          font-size: 50%; /* Adjusted font size */
+        }
+
+        .about .col-6 h5 {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        /* Add padding to sections */
+        section {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      /* Perbesar font di section Programming Skills & Frameworks */
+      #skills h2 {
+        font-size: 2.5rem; /* Perbesar ukuran judul utama */
+      }
+
+      #skills h3 {
+        font-size: 2rem; /* Perbesar ukuran subjudul */
+      }
+
+      #skills ul li {
+        font-size: 1.5rem; /* Perbesar ukuran teks dalam daftar */
+      }
+
+      #certifications ul li {
+        margin-bottom: 20px; /* Tambahkan jarak antar sertifikat */
+      }
+
+      /* Laptop (max-width: 992px) */
+      @media (max-width: 992px) {
+        #interest-languages .row,
+        #skills .row,
+        #certifications .row {
+          flex-direction: column; /* Stack columns vertically */
+          align-items: center; /* Center align items */
+        }
+
+        #interest-languages .col-md-4,
+        #skills .col-md-4,
+        #certifications .col-md-6 {
+          width: 100%; /* Make columns full width */
+          text-align: center; /* Center align text */
+        }
+
+        #skills ul li,
+        #certifications ul li {
+          font-size: 1.2rem; /* Adjust font size for better readability */
+        }
+      }
+
+      /* Tablet (max-width: 768px) */
+      @media (max-width: 768px) {
+        #interest-languages h3,
+        #skills h3,
+        #certifications h3 {
+          font-size: 1.8rem; /* Adjust heading size */
+        }
+
+        #interest-languages ul li,
+        #skills ul li,
+        #certifications ul li {
+          font-size: 1.1rem; /* Adjust font size for smaller screens */
+        }
+
+        #skills img,
+        #certifications img {
+          width: 20px; /* Reduce icon size */
+          margin-right: 5px; /* Adjust spacing */
+        }
+      }
+
+      /* Mobile (max-width: 576px) */
+      @media (max-width: 576px) {
+        #interest-languages h2,
+        #skills h2,
+        #certifications h2 {
+          font-size: 2rem; /* Adjust section title size */
+        }
+
+        #interest-languages h3,
+        #skills h3,
+        #certifications h3 {
+          font-size: 1.5rem; /* Adjust heading size */
+        }
+
+        #interest-languages ul li,
+        #skills ul li,
+        #certifications ul li {
+          font-size: 1rem; /* Adjust font size for smaller screens */
+        }
+
+        #skills img,
+        #certifications img {
+          width: 18px; /* Further reduce icon size */
+          margin-right: 5px; /* Adjust spacing */
+        }
+
+        section {
+          padding-left: 10px; /* Add padding for smaller screens */
+          padding-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body onload="setLanguage('en')">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#">Faisal Abdul Majid</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarTogglerDemo02"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  aria-current="page"
+                  href="#"
+                  data-en="Home"
+                  data-id="Beranda"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#about"
+                  data-en="About"
+                  data-id="Tentang"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#portfolio"
+                  data-en="Portfolio"
+                  data-id="Portofolio"
+                  >Portfolio</a
+                >
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="portfolioDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  data-en="Portfolio"
+                  data-id="Portofolio"
+                >
+                  Portfolio
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end custom-dropdown"
+                  aria-labelledby="portfolioDropdown"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#front-end"
+                      data-en="Front End"
+                      data-id="Front End"
+                      >Front End</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#ui-ux"
+                      data-en="UI/UX"
+                      data-id="UI/UX"
+                      >UI/UX</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#photography"
+                      data-en="Photography"
+                      data-id="Fotografi"
+                      >Photography</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#videography"
+                      data-en="Videography"
+                      data-id="Videografi"
+                      >Videography</a
+                    >
+                  </li>
+                </ul>
+              </li> -->
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#contact"
+                  data-en="Contact"
+                  data-id="Kontak"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  data-en="Language"
+                  data-id="Bahasa"
+                >
+                  Language
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end custom-dropdown"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="setLanguage('en')"
+                      >English</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="setLanguage('id')"
+                      >Indonesia</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="hero" class="hero"></section>
+
+    <section id="about" class="about pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="text-center text-light">
+            <h2 data-en="About Me" data-id="Tentang Saya">About Me</h2>
+          </div>
+          <div class="col-6 img-fluid">
+            <img src="assets/img/about.jpg" class="w-75" alt="" />
+          </div>
+          <div class="col-6 text-light">
+            <h5
+              class="text-justify"
+              data-en="I am a final year student of the Informatics Engineering Study Program at Universitas Perjuangan Tasikmalaya with a great interest in web development and technology. During my studies, I have been actively involved in various web application development projects, both using native technologies such as HTML, CSS, and JavaScript, as well as modern frameworks like Laravel and React. Currently, I am developing a web-based decision support system using fuzzy logic, which aims to provide more accurate recommendations based on certain parameters."
+              data-id="Saya adalah mahasiswa tingkat akhir Program Studi Teknik Informatika di Universitas Perjuangan Tasikmalaya dengan minat besar dalam pengembangan web dan teknologi. Selama masa studi, saya telah aktif dalam berbagai proyek pengembangan aplikasi web, baik menggunakan teknologi native seperti HTML, CSS, dan JavaScript, maupun framework modern seperti Laravel dan React. Saat ini, saya tengah mengembangkan sistem pendukung keputusan berbasis website menggunakan logika fuzzy, yang bertujuan untuk memberikan rekomendasi yang lebih akurat berdasarkan parameter tertentu."
+            >
+              I am a final year student of the Informatics Engineering Study
+              Program at Universitas Perjuangan Tasikmalaya with a great
+              interest in web development and technology. During my studies, I
+              have been actively involved in various web application development
+              projects, both using native technologies such as HTML, CSS, and
+              JavaScript, as well as modern frameworks like Laravel and React.
+              Currently, I am developing a web-based decision support system
+              using fuzzy logic, which aims to provide more accurate
+              recommendations based on certain parameters.
+            </h5>
+            <h5
+              class="text-justify"
+              data-en="This project reflects my interest in applying informatics theory to solve real-world problems. Additionally, I have a high curiosity about the latest technological developments, good analytical skills to identify effective and efficient solutions, and expertise in working collaboratively in teams. I also quickly adapt to new technologies and always strive to improve work efficiency through innovation."
+              data-id="Proyek ini mencerminkan ketertarikan saya pada penerapan teori informatika untuk menyelesaikan masalah dunia nyata. Selain itu, saya memiliki rasa ingin tahu yang tinggi terhadap perkembangan teknologi terbaru, kemampuan analitis yang baik untuk mengidentifikasi solusi yang efektif dan efisien, serta keahlian dalam bekerja secara kolaboratif dalam tim. Saya juga cepat beradaptasi terhadap teknologi baru dan selalu berusaha untuk meningkatkan efisiensi kerja melalui inovasi."
+            >
+              This project reflects my interest in applying informatics theory
+              to solve real-world problems. Additionally, I have a high
+              curiosity about the latest technological developments, good
+              analytical skills to identify effective and efficient solutions,
+              and expertise in working collaboratively in teams. I also quickly
+              adapt to new technologies and always strive to improve work
+              efficiency through innovation.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="interest-languages"
+      class="interest-languages bg-dark text-light pt-5 pb-5"
+    >
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 data-en="Interest & Languages" data-id="Minat & Bahasa">
+            Interest & Languages
+          </h2>
+        </div>
+        <div class="row">
+          <!-- Professional Interests -->
+          <div class="col-md-4">
+            <h3 data-en="Professional Interests" data-id="Minat Profesional">
+              Professional Interests
+            </h3>
+            <ul class="list-unstyled">
+              <li>Web Development</li>
+              <li>Artificial Intelligence</li>
+              <li>Data Science</li>
+              <li>Internet of Thing</li>
+              <li>Cyber Security</li>
+            </ul>
+          </div>
+          <!-- Personal Interests -->
+          <div class="col-md-4">
+            <h3 data-en="Personal Interests" data-id="Minat Pribadi">
+              Personal Interests
+            </h3>
+            <ul class="list-unstyled">
+              <li>Photography</li>
+              <li>Traveling</li>
+              <li>Gaming</li>
+              <li>Reading Technology Blogs</li>
+            </ul>
+          </div>
+          <!-- Spoken Languages -->
+          <div class="col-md-4">
+            <h3 data-en="Spoken Languages" data-id="Bahasa Lisan">
+              Spoken Languages
+            </h3>
+            <ul class="list-unstyled">
+              <li>
+                English - Limited Working Proficiency with Technical Expertise
+              </li>
+              <li>Indonesian - Native</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills bg-gray text-light pt-5 pb-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2
+            data-en="Programming Skills, Frameworks & Tools"
+            data-id="Keahlian Pemrograman, Framework & Tools"
+          >
+            Programming Skills, Frameworks & Tools
+          </h2>
+        </div>
+        <div class="row">
+          <!-- Programming Skills -->
+          <div class="col-md-4">
+            <h3 data-en="Programming Skills" data-id="Keahlian Pemrograman">
+              Programming Skills
+            </h3>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/html-5-svgrepo-com.svg"
+                    alt="HTML"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/css-3-svgrepo-com.svg"
+                    alt="CSS"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  CSS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/javascript-svgrepo-com.svg"
+                    alt="JavaScript"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  JavaScript
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.php.net/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/php-svgrepo-com.svg"
+                    alt="PHP"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  PHP
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.python.org/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/python-svgrepo-com.svg"
+                    alt="Python"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Python
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Frameworks -->
+          <div class="col-md-4">
+            <h3 data-en="Frameworks" data-id="Framework">Frameworks</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://getbootstrap.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/bootstrap-svgrepo-com.svg"
+                    alt="Bootstrap"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Bootstrap
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://laravel.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/laravel-svgrepo-com.svg"
+                    alt="Laravel"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Laravel
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://react.dev/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/react-svgrepo-com.svg"
+                    alt="React"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  React
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tailwindcss.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/tailwind-svgrepo-com.svg"
+                    alt="Tailwind CSS"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Tailwind CSS
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Tools -->
+          <div class="col-md-4">
+            <h3 data-en="Tools" data-id="Tools">Tools</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://git-scm.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/git-svgrepo-com.svg"
+                    alt="Git"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Git
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/github-svgrepo-com.svg"
+                    alt="GitHub"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://code.visualstudio.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/vscode-svgrepo-com.svg"
+                    alt="VS Code"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Visual Studio Code
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.figma.com/"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/figma-svgrepo-com.svg"
+                    alt="Figma"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Figma
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="certifications"
+      class="certifications bg-dark text-light pt-5 pb-5"
+    >
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2
+            data-en="Licensed and Certification"
+            data-id="Lisensi dan Sertifikasi"
+          >
+            Licensed and Certification
+          </h2>
+        </div>
+        <div class="row">
+          <!-- Certifications -->
+          <div class="col-md-6">
+            <h3 data-en="Certifications" data-id="Sertifikasi">
+              Certifications
+            </h3>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/MRZMD2L2KZYQ"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="Certification Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Dasar Pemrograman Web - Dicoding
+                  <br />
+                  <small>Diterbitkan: 20 Februari 2024</small>
+                  <br />
+                  <small>Berlaku: 20 Februari 2027</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/MRZMYM383ZYQ"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="Certification Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Dasar AI - Dicoding
+                  <br />
+                  <small>Diterbitkan: 17 Desember 2024</small>
+                  <br />
+                  <small>Berlaku: 17 Desember 2027</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/JMZVE7W3RPN9"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="Certification Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Memulai Pemrograman dengan Python - Dicoding
+                  <br />
+                  <small>Diterbitkan: 16 Desember 2024</small>
+                  <br />
+                  <small>Berlaku: 16 Desember 2027</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/NVP75DL4OXR0"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="Certification Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Dasar Data Science - Dicoding
+                  <br />
+                  <small>Diterbitkan: 25 September 2024</small>
+                  <br />
+                  <small>Berlaku: 25 September 2027</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Licenses -->
+          <div class="col-md-6">
+            <h3 data-en="Licenses" data-id="Lisensi">Licenses</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/GRX5OV7EVP0M"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="License Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Fundamental Front-End Web Development - Dicoding
+                  <br />
+                  <small>Diterbitkan: 18 September 2024</small>
+                  <br />
+                  <small>Berlaku: 18 September 2027</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/6RPNV86E9Z2M"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="License Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Dasar Git dengan GitHub - Dicoding
+                  <br />
+                  <small>Diterbitkan: 05 Desember 2023</small>
+                  <br />
+                  <small>Berlaku: 05 Desember 2026</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/1RXY14319PVM"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="License Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Dasar Structured Query Language (SQL) - Dicoding
+                  <br />
+                  <small>Diterbitkan: 02 Desember 2023</small>
+                  <br />
+                  <small>Berlaku: 02 Desember 2026</small>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dicoding.com/certificates/N9ZO7R63YZG5"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/dicoding.jpeg"
+                    alt="License Icon"
+                    style="width: 25px; margin-right: 10px"
+                  />
+                  Belajar Membuat Front-End Web untuk Pemula - Dicoding
+                  <br />
+                  <small>Diterbitkan: 23 Agustus 2022</small>
+                  <br />
+                  <small>Berlaku: 23 Agustus 2025</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="mt-5 mb-5 text-center text-light">
+        <h2 data-en="Portfolio" data-id="Portofolio">Portfolio Front-End</h2>
+        <div class="container mt-5 mb-5 text-center text-light">
+          <div class="row">
+            <div class="col-4 portfolio-item">
+              <a href="assets/web/srmobil/index.html">
+                <img src="assets/img/srmobil.png" class="img-fluid" alt="" />
+                <div class="view-text">View</div>
+              </a>
+            </div>
+            <div class="col-4 portfolio-item">
+              <a href="assets/web/opentrip/index.html">
+                <img src="assets/img/travego.png" class="img-fluid" alt="" />
+                <div class="view-text">View</div>
+              </a>
+            </div>
+            <div class="col-4 portfolio-item">
+              <a href="assets/web/mainjauh/index.html">
+                <img src="assets/img/travego.png" class="img-fluid" alt="" />
+                <div class="view-text">View</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="front-end" class="front-end"></section>
+
+    <!-- <section id="ui-ux" class="ui-ux">
+      <div class="mt-5 mb-5 text-center text-light">
+        <h2 data-en="UI/UX" data-id="UI/UX">UI/UX</h2>
+      </div>
+    </section>
+    <section id="photography" class="photography">
+      <div class="mt-5 mb-5 text-center text-light">
+        <h2 data-en="Photography" data-id="Fotografi">Photography</h2>
+      </div>
+    </section>
+    <section id="videography" class="videography">
+      <div class="mt-5 mb-5 text-center text-light">
+        <h2 data-en="Videography" data-id="Videografi">Videography</h2>
+      </div>
+    </section> -->
+
+    <footer id="contact" class="contact bg-dark pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col d-flex justify-content-center text-light">
+            <ul class="list-unstyled">
+              <li>
+                <h3 data-en="CONTACT" data-id="KONTAK">CONTACT</h3>
+              </li>
+              <li>
+                <h6>
+                  <a
+                    href="mailto:faisalabdulmajid.dev@gmail.com"
+                    class="text-decoration-none text-light"
+                    >faisalabdulmajid.dev@gmail.com</a
+                  >
+                </h6>
+              </li>
+              <li>
+                <p
+                  data-en="Desa Karangkamulyan, Kecamatan Cijeungjing, Kabupaten Ciamis, Provinsi Jawa Barat, Indonesia"
+                  data-id="Desa Karangkamulyan, Kecamatan Cijeungjing, Kabupaten Ciamis, Provinsi Jawa Barat, Indonesia"
+                >
+                  Desa Karangkamulyan, Kecamatan Cijeungjing, Kabupaten Ciamis,
+                  Provinsi Jawa Barat, Indonesia
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col"></div>
+          <div class="col d-flex justify-content-center">
+            <ul class="list-unstyled text-light">
+              <li>
+                <h3 data-en="Follow US" data-id="Ikuti Kami">Follow US</h3>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Faisalabdulmajid"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/github-142-svgrepo-com.svg"
+                    style="padding-right: 10px; width: 25px"
+                    alt=""
+                  />Github
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/faisal-abdul-majid-1065a91a9/"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/linkedin-svgrepo-com.svg"
+                    style="padding-right: 10px; width: 25px"
+                    alt=""
+                  />Linkedin
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/faisalabdulmajid/"
+                  class="text-decoration-none text-light"
+                >
+                  <img
+                    src="assets/icon/instagram-1-svgrepo-com.svg"
+                    style="padding-right: 10px; width: 25px"
+                    alt=""
+                  />Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row text-center text-light pb-3">
+          <div class="col">
+            <p>&copy; 2025 | Faisal Abdul Majid</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function setLanguage(language) {
+        document.querySelectorAll("[data-en]").forEach((element) => {
+          element.textContent = element.getAttribute("data-" + language);
+        });
+      }
+    </script>
+  </body>
+</html>
