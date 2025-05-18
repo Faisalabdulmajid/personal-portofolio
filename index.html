@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,6 +63,29 @@
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
       }
 
+      #interest-languages .d-flex {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; /* Jarak antar kolom */
+        flex-wrap: wrap; /* Bungkus elemen ke baris baru jika tidak cukup ruang */
+        overflow-x: unset; /* Hilangkan scroll horizontal */
+      }
+
+      #interest-languages .col-md-3 {
+        flex: 1 1 calc(25% - 20px); /* Setiap kolom memiliki lebar 25% dengan jarak antar kolom */
+        min-width: 250px; /* Lebar minimum untuk responsivitas */
+        text-align: left;
+      }
+
+      #interest-languages ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      #interest-languages ul li {
+        margin-bottom: 10px;
+      }
+
       /* Media query for responsive navbar */
 
       /* laptop */
@@ -79,6 +102,22 @@
         }
         .navbar-toggler-icon {
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        #skills .row {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap !important; /* Selalu satu baris */
+          justify-content: space-between;
+          gap: 10px;
+        }
+        #skills .col-md-4 {
+          flex: 1 1 0;
+          min-width: 0;
+          max-width: 33.33%;
+          text-align: left;
+          margin-bottom: 0;
+          box-sizing: border-box;
         }
       }
 
@@ -126,6 +165,105 @@
         section {
           padding-left: 15px;
           padding-right: 15px;
+        }
+
+        #interest-languages .d-flex {
+          flex-direction: row; /* Pastikan tetap satu baris */
+          flex-wrap: nowrap; /* Jangan bungkus ke baris baru */
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        #interest-languages .col-md-3 {
+          flex: 1 1 0; /* Bagi rata tiap kolom */
+          min-width: 0; /* Hilangkan lebar minimum */
+          max-width: 33.33%; /* Maksimal 3 kolom dalam satu baris */
+          box-sizing: border-box;
+        }
+
+        #interest-languages h3 {
+          font-size: 1.5rem; /* Sesuaikan ukuran heading */
+        }
+        z #interest-languages ul li {
+          font-size: 1rem; /* Sesuaikan ukuran teks */
+        }
+
+        #skills .row {
+          display: flex;
+          flex-wrap: wrap !important; /* Izinkan membungkus ke baris baru */
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 10px;
+          overflow-x: unset; /* Hilangkan scroll horizontal */
+        }
+        #skills .col-md-4 {
+          flex: 1 1 45%; /* 2 kolom per baris */
+          min-width: 0;
+          max-width: 48%;
+          margin-bottom: 20px;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        #skills .col-md-4:last-child {
+          flex-basis: 100%; /* Kolom terakhir (Tools) di baris kedua penuh */
+          max-width: 100%;
+        }
+
+        #skills h3 {
+          font-size: 1.5rem; /* Sesuaikan ukuran heading */
+        }
+
+        #skills ul li {
+          font-size: 1rem; /* Sesuaikan ukuran teks */
+        }
+
+        #skills img {
+          width: 18px; /* Perkecil ukuran ikon */
+          margin-right: 5px; /* Sesuaikan jarak ikon */
+        }
+
+        #certifications .row {
+          flex-wrap: wrap; /* Bungkus elemen ke baris baru */
+          justify-content: center; /* Pusatkan elemen */
+        }
+
+        #certifications .col-md-6 {
+          flex: 1 1 100%; /* Setiap kolom memiliki lebar penuh */
+          max-width: 100%; /* Pastikan kolom tidak melebihi lebar kontainer */
+          text-align: center; /* Rata tengah teks */
+          margin-bottom: 20px; /* Tambahkan jarak antar kolom */
+        }
+
+        #certifications h3 {
+          font-size: 1.5rem; /* Sesuaikan ukuran heading */
+        }
+
+        #certifications ul li {
+          font-size: 1rem; /* Sesuaikan ukuran teks */
+          margin-bottom: 10px; /* Tambahkan jarak antar item */
+        }
+
+        #certifications img {
+          width: 18px; /* Perkecil ukuran ikon */
+          margin-right: 5px; /* Sesuaikan jarak ikon */
+        }
+
+        #skills .row {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap !important;
+          overflow-x: auto;
+          gap: 10px;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
+        }
+        #skills .col-md-4 {
+          flex: 0 0 80%;
+          max-width: 80%;
+          min-width: 250px;
+          margin-bottom: 0;
+          box-sizing: border-box;
+          scroll-snap-align: start;
         }
       }
 
@@ -233,7 +371,8 @@
         #certifications h3 {
           font-size: 1.8rem; /* Adjust heading size */
         }
-
+        #interest-languages {
+        }
         #interest-languages ul li,
         #skills ul li,
         #certifications ul li {
@@ -278,9 +417,59 @@
           padding-right: 10px;
         }
       }
+
+      /* Laptop (max-width: 992px) */
+      @media (max-width: 992px) {
+        #interest-languages .row,
+        #skills .row,
+        #certifications .row {
+          flex-wrap: nowrap; /* Jangan biarkan elemen membungkus ke baris baru */
+          justify-content: space-between; /* Beri jarak antar elemen */
+        }
+
+        #interest-languages .col-md-4,
+        #skills .col-md-4,
+        #certifications .col-md-6 {
+          width: auto; /* Biarkan ukuran kolom mengikuti konten */
+          text-align: center; /* Tetap rata tengah teks */
+        }
+      }
+
+      /* Tablet (max-width: 768px) */
+      @media (max-width: 768px) {
+        #interest-languages .row,
+        #skills .row,
+        #certifications .row {
+          flex-wrap: nowrap; /* Jangan biarkan elemen membungkus ke baris baru */
+          justify-content: space-between; /* Beri jarak antar elemen */
+        }
+
+        #interest-languages .col-md-4,
+        #skills .col-md-4,
+        #certifications .col-md-6 {
+          width: auto; /* Biarkan ukuran kolom mengikuti konten */
+          text-align: center; /* Tetap rata tengah teks */
+        }
+      }
+
+      /* Mobile (max-width: 576px) */
+      @media (max-width: 576px) {
+        #interest-languages .row,
+        #skills .row,
+        #certifications .row {
+          flex-wrap: nowrap; /* Jangan biarkan elemen membungkus ke baris baru */
+          justify-content: space-between; /* Beri jarak antar elemen */
+        }
+
+        #interest-languages .col-md-4,
+        #skills .col-md-4,
+        #certifications .col-md-6 {
+          width: auto; /* Biarkan ukuran kolom mengikuti konten */
+        }
+      }
     </style>
   </head>
-  <body onload="setLanguage('en')">
+  <body onload="setLanguage('id')">
     <header>
       <nav class="navbar navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
@@ -329,61 +518,6 @@
                   >Portfolio</a
                 >
               </li>
-              <!-- <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle text-white"
-                  href="#"
-                  id="portfolioDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  data-en="Portfolio"
-                  data-id="Portofolio"
-                >
-                  Portfolio
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-end custom-dropdown"
-                  aria-labelledby="portfolioDropdown"
-                >
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#front-end"
-                      data-en="Front End"
-                      data-id="Front End"
-                      >Front End</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#ui-ux"
-                      data-en="UI/UX"
-                      data-id="UI/UX"
-                      >UI/UX</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#photography"
-                      data-en="Photography"
-                      data-id="Fotografi"
-                      >Photography</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#videography"
-                      data-en="Videography"
-                      data-id="Videografi"
-                      >Videography</a
-                    >
-                  </li>
-                </ul>
-              </li> -->
               <li class="nav-item">
                 <a
                   class="nav-link text-white"
@@ -489,13 +623,13 @@
             Interest & Languages
           </h2>
         </div>
-        <div class="row">
+        <div class="d-flex flex-wrap">
           <!-- Professional Interests -->
-          <div class="col-md-4">
+          <div class="col-md-3 col-sm-12 mb-3">
             <h3 data-en="Professional Interests" data-id="Minat Profesional">
               Professional Interests
             </h3>
-            <ul class="list-unstyled">
+            <ul>
               <li>Web Development</li>
               <li>Artificial Intelligence</li>
               <li>Data Science</li>
@@ -504,11 +638,11 @@
             </ul>
           </div>
           <!-- Personal Interests -->
-          <div class="col-md-4">
+          <div class="col-md-3 col-sm-12 mb-3">
             <h3 data-en="Personal Interests" data-id="Minat Pribadi">
               Personal Interests
             </h3>
-            <ul class="list-unstyled">
+            <ul>
               <li>Photography</li>
               <li>Traveling</li>
               <li>Gaming</li>
@@ -516,11 +650,11 @@
             </ul>
           </div>
           <!-- Spoken Languages -->
-          <div class="col-md-4">
+          <div class="col-md-3 col-sm-12 mb-3">
             <h3 data-en="Spoken Languages" data-id="Bahasa Lisan">
               Spoken Languages
             </h3>
-            <ul class="list-unstyled">
+            <ul>
               <li>
                 English - Limited Working Proficiency with Technical Expertise
               </li>
@@ -763,10 +897,7 @@
         </div>
         <div class="row">
           <!-- Certifications -->
-          <div class="col-md-6">
-            <h3 data-en="Certifications" data-id="Sertifikasi">
-              Certifications
-            </h3>
+          <div class="col-md-6 col-sm-2">
             <ul class="list-unstyled">
               <li>
                 <a
@@ -843,8 +974,7 @@
             </ul>
           </div>
           <!-- Licenses -->
-          <div class="col-md-6">
-            <h3 data-en="Licenses" data-id="Lisensi">Licenses</h3>
+          <div class="col-md-6 col-sm-2">
             <ul class="list-unstyled">
               <li>
                 <a
@@ -953,22 +1083,6 @@
     </section>
     <section id="front-end" class="front-end"></section>
 
-    <!-- <section id="ui-ux" class="ui-ux">
-      <div class="mt-5 mb-5 text-center text-light">
-        <h2 data-en="UI/UX" data-id="UI/UX">UI/UX</h2>
-      </div>
-    </section>
-    <section id="photography" class="photography">
-      <div class="mt-5 mb-5 text-center text-light">
-        <h2 data-en="Photography" data-id="Fotografi">Photography</h2>
-      </div>
-    </section>
-    <section id="videography" class="videography">
-      <div class="mt-5 mb-5 text-center text-light">
-        <h2 data-en="Videography" data-id="Videografi">Videography</h2>
-      </div>
-    </section> -->
-
     <footer id="contact" class="contact bg-dark pt-4">
       <div class="container">
         <div class="row">
@@ -1061,6 +1175,10 @@
           element.textContent = element.getAttribute("data-" + language);
         });
       }
+      // Set default bahasa Indonesia saat halaman dimuat
+      window.addEventListener("DOMContentLoaded", function () {
+        setLanguage("id");
+      });
     </script>
   </body>
 </html>
